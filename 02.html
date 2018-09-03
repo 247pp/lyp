@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+		div{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			margin-top: 10px;
+			transition-duration: 0.3s;
+		}
+
+	</style>
+</head>
+<body>
+	
+	
+	<button>
+		上一个
+	</button>
+	<button>
+		下一个
+	</button>
+	<button>
+		最后一个
+	</button>
+	<button>
+		第一个
+	</button>
+
+	<div style="background:red"></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<script>
+
+		var aBtn = document.querySelectorAll('button');
+		var aDiv = document.querySelectorAll('div');
+		var num = 0;
+
+		aBtn[0].onclick = function () {
+			num--;
+			num<0?num=3 :num;
+
+			for( let i=0; i<aDiv.length; i++){
+				aDiv[i].style.background='yellow';
+			}
+			aDiv[num].style.backgroundColor='red';
+			
+		}
+
+
+
+		aBtn[1].onclick = function () {
+			num++;
+
+			if(num>3){
+				num=0
+
+			}
+
+			for( let i=0; i<aDiv.length; i++){
+				aDiv[i].style.background='yellow';
+			}
+			aDiv[num].style.backgroundColor='red';
+			
+		}
+
+
+		aBtn[2].onclick=function(){
+			num = 3;
+			for( let i=0; i<aDiv.length; i++){
+				aDiv[i].style.background='yellow';
+			}
+			aDiv[num].style.background = 'red';
+			
+		}
+
+
+
+
+	</script>
+
+</body>
+</html>
